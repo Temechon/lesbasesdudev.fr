@@ -2,7 +2,7 @@
 	"name": "lesbasesdudev.fr",
 	"version": "0.0.1",
 	"scripts": {
-		"start": "vite dev",
+		"start": "vite dev --host",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
@@ -27,6 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.1.1",
-		"@fortawesome/free-solid-svg-icons": "^6.1.1"
+		"@fortawesome/free-solid-svg-icons": "^6.1.1",
+		"firebase": "^9.9.0"
 	}
 }
