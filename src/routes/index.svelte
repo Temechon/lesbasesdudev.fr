@@ -1,16 +1,23 @@
-<script>
+<script lang="typescript">
     import "../app.css";
     import Fa from "svelte-fa/src/fa.svelte";
     import {
         faBoltLightning,
         faArrowTurnDown,
         faCircleQuestion,
+        faSpinner,
+        faCheckCircle,
     } from "@fortawesome/free-solid-svg-icons";
+    import { addUser } from "../firebase";
 
     let email = "";
+    let disabled = true;
+    let saveStatus: string = "";
 
-    function addEmail() {
-        alert(email);
+    async function addEmail() {
+        saveStatus = "saving";
+        await addUser(email);
+        saveStatus = "saved";
     }
 </script>
 
@@ -25,9 +32,12 @@
     <!-- Texte -->
     <!-- sous-titre -->
     <h2 class="text-3xl lg:mt-28 xl:text-3xl">
-        <span class="font-bold">Une formation</span> complète, qui part de zéro
+        <span class="font-bold">Une formation</span> complète, qui part de
+        <span class="font-bold text-pink-400">zéro</span>
         et qui explique en détails
-        <span class="font-bold">les bases du développement web.</span>
+        <span class="font-bold text-blue-400"
+            >les bases du développement web.</span
+        >
     </h2>
 
     <div class="lg:w-2/3 m-auto p-8 pt-0">
@@ -179,13 +189,13 @@
     <h1 class="mt-7 text-5xl font-extrabold">
         Ca t'intéresse ? Inscris-toi ici !
     </h1>
-    <h2 class="text-2xl mt-6">
+    <h2 class="text-xl mt-6">
         Renseigne ton adresse email ici, et tu recevras un message dès que la
         formation sera disponible.
     </h2>
 
     <div class="px-4 mt-12 md:w-4/6 m-auto">
-        <form on:submit|preventDefault={addEmail}>
+        <form on:submit|preventDefault|stopPropagation|once={addEmail}>
             <div
                 id="mc_embed_signup_scroll"
                 class="flex flex-col md:flex-row items-stretch justify-start"
@@ -196,17 +206,26 @@
                         type="email"
                         autocomplete="email"
                         placeholder="Ton email ici"
-                        class="required email px-3 py-2 rounded-md w-full text-black"
+                        class="px-3 py-2 rounded-md w-full text-black"
                     />
                 </div>
                 <div class="h-full">
-                    <input
+                    <button
+                        disabled={!email}
                         type="submit"
-                        value="Je m'enregistre!"
-                        name="subscribe"
-                        id="mc-embedded-subscribe"
-                        class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md cursor-pointer"
-                    />
+                        class="disabled:bg-gray-400 w-40 flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md cursor-pointer"
+                    >
+                        {#if saveStatus === "saving"}
+                            <Fa
+                                icon={faSpinner}
+                                class="text-2xl animate-spin"
+                            />
+                        {:else if saveStatus === "saved"}
+                            <Fa icon={faCheckCircle} class="text-2xl" />
+                        {:else}
+                            Je m'enregistre !
+                        {/if}
+                    </button>
                 </div>
             </div>
         </form>
