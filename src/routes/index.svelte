@@ -144,66 +144,6 @@
         </div>
     </div>
 </section>
-
-<!-- Separateur -->
-<div
-    class="h-1 bg-red-300 w-5/6 m-auto bg-gradient-to-r from-blue-500 to-pink-500 my-4"
-/>
-
-<!-- FAQ -->
-<section class="w-full px-8 text-center lg:p-14 lg:px-36 py-12">
-    <h1 class="text-5xl font-extrabold">Questions fréquentes</h1>
-    <h2 class="text-2xl mt-6">
-        Et si tu en as d'autres, n'hésites pas à m'envoyer un email :)
-    </h2>
-
-    <!-- Liste des questions -->
-    <div class="px-4 mt-12 md:w-4/6 m-auto">
-        <!-- Question -->
-        <div class="mt-6 mb-12">
-            <!-- Question titre -->
-            <div class="flex items-center text-left">
-                <Fa
-                    icon={faCircleQuestion}
-                    class="text-blue-400 mr-4 text-4xl"
-                />
-                <h3 class="text-xl font-semibold">
-                    Est-ce que cette formation est faite pour moi ?
-                </h3>
-            </div>
-            <!-- Réponse -->
-            <div class="text-justify pl-12 pr-4 mt-4 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent nibh est, interdum non augue id, vestibulum mattis
-                libero. eleifend sodales.Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Praesent nibh est, interdum non augue id,
-                vestibulum mattis libero. eleifend sodales.
-            </div>
-        </div>
-        <!-- Question -->
-        <div class="mt-6 mb-12">
-            <!-- Question titre -->
-            <div class="flex items-center text-left">
-                <Fa
-                    icon={faCircleQuestion}
-                    class="text-blue-400 mr-4 text-4xl"
-                />
-                <h3 class="text-xl font-semibold">
-                    Est-ce que cette formation est faite pour moi ?
-                </h3>
-            </div>
-            <!-- Réponse -->
-            <div class="text-justify pl-12 pr-4 mt-4 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent nibh est, interdum non augue id, vestibulum mattis
-                libero. eleifend sodales.Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Praesent nibh est, interdum non augue id,
-                vestibulum mattis libero. eleifend sodales.
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Separateur -->
 <div
     class="h-1 bg-red-300 w-5/6 m-auto bg-gradient-to-r from-blue-500 to-pink-500 my-4"
@@ -268,12 +208,71 @@
 
 <!-- Separateur -->
 <div
+    class="h-1 bg-red-300 w-5/6 m-auto bg-gradient-to-r from-blue-500 to-pink-500 my-4"
+/>
+
+<!-- FAQ -->
+<section class="w-full px-8 text-center lg:p-14 lg:px-36 py-12">
+    <h1 class="text-5xl font-extrabold">Questions fréquentes</h1>
+    <h2 class="text-2xl mt-6">
+        Et si tu en as d'autres, n'hésites pas à m'envoyer un email :)
+    </h2>
+
+    <!-- Liste des questions -->
+    <div class="px-4 mt-12 md:w-4/6 m-auto">
+        <!-- Question -->
+        <div class="mt-6 mb-12">
+            <!-- Question titre -->
+            <div class="flex items-center text-left">
+                <Fa
+                    icon={faCircleQuestion}
+                    class="text-blue-400 mr-4 text-4xl"
+                />
+                <h3 class="text-xl font-semibold">
+                    Est-ce que cette formation est faite pour moi ?
+                </h3>
+            </div>
+            <!-- Réponse -->
+            <div class="text-justify pl-12 pr-4 mt-4 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent nibh est, interdum non augue id, vestibulum mattis
+                libero. eleifend sodales.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Praesent nibh est, interdum non augue id,
+                vestibulum mattis libero. eleifend sodales.
+            </div>
+        </div>
+        <!-- Question -->
+        <div class="mt-6 mb-12">
+            <!-- Question titre -->
+            <div class="flex items-center text-left">
+                <Fa
+                    icon={faCircleQuestion}
+                    class="text-blue-400 mr-4 text-4xl"
+                />
+                <h3 class="text-xl font-semibold">
+                    Est-ce que cette formation est faite pour moi ?
+                </h3>
+            </div>
+            <!-- Réponse -->
+            <div class="text-justify pl-12 pr-4 mt-4 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent nibh est, interdum non augue id, vestibulum mattis
+                libero. eleifend sodales.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Praesent nibh est, interdum non augue id,
+                vestibulum mattis libero. eleifend sodales.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Separateur -->
+<div
     class="h-1 bg-red-300 w-5/6 m-auto bg-gradient-to-r from-blue-500 to-pink-500 "
 />
 
 <!-- Footer -->
 <section class="w-full px-8 lg:p-14 lg:px-36 bg-gray-800 py-12">
-    <div class="flex">
+    <div class="flex xl:w-2/3  m-auto">
         <!-- A propos -->
         <div class="w-3/5 pr-8">
             <h1 class="text-2xl font-extrabold text-left">A propos</h1>
