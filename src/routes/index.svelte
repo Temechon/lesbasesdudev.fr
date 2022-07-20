@@ -1,36 +1,49 @@
-<script lang="typescript">
+<script lang="ts">
+    import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons/faArrowTurnDown";
+    import { faBoltLightning } from "@fortawesome/free-solid-svg-icons/faBoltLightning";
+    import { faCheckCircle } from "@fortawesome/free-solid-svg-icons/faCheckCircle";
+    import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons/faCircleQuestion";
+    import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons/faEnvelopeSquare";
+    import { faSpinner } from "@fortawesome/free-solid-svg-icons/faSpinner";
+
+    import Fa from "svelte-fa";
     import "../app.css";
-    import Fa from "svelte-fa/src/fa.svelte";
-    import {
-        faBoltLightning,
-        faArrowTurnDown,
-        faCircleQuestion,
-        faSpinner,
-        faCheckCircle,
-        faMailReply,
-        faAt,
-        faEnvelopeCircleCheck,
-        faEnvelope,
-        faEnvelopeSquare,
-    } from "@fortawesome/free-solid-svg-icons";
     import { addUser } from "../firebase";
 
-    import {
-        faGithub,
-        faGithubAlt,
-        faGithubSquare,
-        faLinkedin,
-        faTwitter,
-        faTwitterSquare,
-    } from "@fortawesome/free-brands-svg-icons";
+    import { faGithubSquare } from "@fortawesome/free-brands-svg-icons/faGithubSquare";
+    import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+    import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
 
     let email = "";
 
     let saveStatus: string = "";
+
+    /**
+     * Ajoute un email en DB si ce n'est pas un spambot
+     */
     async function addEmail() {
         saveStatus = "saving";
-        await addUser(email);
-        saveStatus = "saved";
+        // Check si le champ ct_phone est rempli correctement
+        const hpelement = document.getElementById(
+            "ct_phone"
+        ) as HTMLInputElement;
+        if (hpelement?.value !== "1") {
+            saveStatus = "registered";
+        } else {
+            await addUser(email);
+            saveStatus = "saved";
+            setTimeout(() => {
+                saveStatus = "registered";
+            }, 1500);
+        }
+    }
+
+    /**
+     * Scroll jusqu'à l'enregistrement de l'email
+     */
+    function scrollToBottom() {
+        const element = document.getElementById("register");
+        element?.scrollIntoView({ behavior: "smooth" });
     }
 </script>
 
@@ -70,6 +83,7 @@
 
         <div class="flex items-center justify-center">
             <button
+                on:click={scrollToBottom}
                 class="bg-indigo-500 px-7 py-4 text-white text-xl rounded-xl mt-20 flex items-center hover:bg-indigo-400 transition-all"
             >
                 <Fa icon={faBoltLightning} class="text-yellow-400 mr-4" />
@@ -196,7 +210,7 @@
 />
 
 <!-- Inscription par email -->
-<section class="w-full text-center px-8 lg:p-14 lg:px-36 py-12">
+<section class="w-full text-center px-8 lg:p-14 lg:px-36 py-12" id="register">
     <h1 class="text-5xl font-extrabold">Ca t'intéresse ? Inscris-toi ici !</h1>
     <h2 class="text-xl mt-6">
         Renseigne ton adresse email ici, et tu recevras un message dès que la
@@ -221,15 +235,17 @@
                         type="text"
                         autocomplete="off"
                         name="phone"
-                        id="ct_phone_field"
-                        class="hidden"
+                        value="1"
+                        id="ct_phone"
+                        class="!hidden"
+                        tabindex="-1"
                     />
                 </div>
                 <div class="h-full">
                     <button
-                        disabled={!email}
+                        disabled={!email || saveStatus === "registered"}
                         type="submit"
-                        class="disabled:bg-gray-400 w-40 flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md cursor-pointer"
+                        class="disabled:bg-gray-400 disabled:cursor-not-allowed w-40 flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md cursor-pointer"
                     >
                         {#if saveStatus === "saving"}
                             <Fa
@@ -237,6 +253,8 @@
                                 class="text-2xl animate-spin"
                             />
                         {:else if saveStatus === "saved"}
+                            <Fa icon={faCheckCircle} class="text-2xl" />
+                        {:else if saveStatus === "registered"}
                             <Fa icon={faCheckCircle} class="text-2xl" />
                         {:else}
                             Je m'enregistre !
