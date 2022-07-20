@@ -7,13 +7,26 @@
         faCircleQuestion,
         faSpinner,
         faCheckCircle,
+        faMailReply,
+        faAt,
+        faEnvelopeCircleCheck,
+        faEnvelope,
+        faEnvelopeSquare,
     } from "@fortawesome/free-solid-svg-icons";
     import { addUser } from "../firebase";
 
-    let email = "";
-    let disabled = true;
-    let saveStatus: string = "";
+    import {
+        faGithub,
+        faGithubAlt,
+        faGithubSquare,
+        faLinkedin,
+        faTwitter,
+        faTwitterSquare,
+    } from "@fortawesome/free-brands-svg-icons";
 
+    let email = "";
+
+    let saveStatus: string = "";
     async function addEmail() {
         saveStatus = "saving";
         await addUser(email);
@@ -21,7 +34,7 @@
     }
 </script>
 
-<section class="w-full text-center lg:p-14 lg:px-36">
+<section class="w-full px-8 text-center lg:p-14 lg:px-36 pb-12">
     <!-- Titre -->
     <h1 class="my-14 text-5xl font-extrabold xl:text-8xl">
         Apprendre les bases du <span
@@ -72,10 +85,8 @@
 />
 
 <!-- 2e section -->
-<section class="w-full text-center lg:p-14 lg:px-36">
-    <h1 class="mt-7 text-5xl font-extrabold">
-        Ce qui sera détaillé et expliqué
-    </h1>
+<section class="w-full px-8 text-center lg:p-14 lg:px-36 py-12">
+    <h1 class=" text-5xl font-extrabold">Ce qui sera détaillé et expliqué</h1>
     <h2 class="text-2xl mt-6">
         Et ce que vous saurez à l'issue de la formation
     </h2>
@@ -126,8 +137,8 @@
 />
 
 <!-- FAQ -->
-<section class="w-full text-center lg:p-14 lg:px-36">
-    <h1 class="mt-7 text-5xl font-extrabold">Questions fréquentes</h1>
+<section class="w-full px-8 text-center lg:p-14 lg:px-36 py-12">
+    <h1 class="text-5xl font-extrabold">Questions fréquentes</h1>
     <h2 class="text-2xl mt-6">
         Et si tu en as d'autres, n'hésites pas à m'envoyer un email :)
     </h2>
@@ -185,10 +196,8 @@
 />
 
 <!-- Inscription par email -->
-<section class="w-full text-center lg:p-14 lg:px-36">
-    <h1 class="mt-7 text-5xl font-extrabold">
-        Ca t'intéresse ? Inscris-toi ici !
-    </h1>
+<section class="w-full text-center px-8 lg:p-14 lg:px-36 py-12">
+    <h1 class="text-5xl font-extrabold">Ca t'intéresse ? Inscris-toi ici !</h1>
     <h2 class="text-xl mt-6">
         Renseigne ton adresse email ici, et tu recevras un message dès que la
         formation sera disponible.
@@ -206,7 +215,14 @@
                         type="email"
                         autocomplete="email"
                         placeholder="Ton email ici"
-                        class="px-3 py-2 rounded-md w-full text-black"
+                        class="outline-none focus:ring-4 ring-blue-500 px-3 py-2 rounded-md w-full text-black"
+                    />
+                    <input
+                        type="text"
+                        autocomplete="off"
+                        name="phone"
+                        id="ct_phone_field"
+                        class="hidden"
                     />
                 </div>
                 <div class="h-full">
@@ -232,7 +248,66 @@
     </div>
 </section>
 
+<!-- Separateur -->
+<div
+    class="h-1 bg-red-300 w-5/6 m-auto bg-gradient-to-r from-blue-500 to-pink-500 "
+/>
+
 <!-- Footer -->
-<section class="w-full text-center lg:p-14 lg:px-36 bg-gray-700 h-72">
-    footer
+<section class="w-full px-8 lg:p-14 lg:px-36 bg-gray-800 py-12">
+    <div class="flex">
+        <!-- A propos -->
+        <div class="w-3/5 pr-8">
+            <h1 class="text-2xl font-extrabold text-left">A propos</h1>
+
+            <p class="text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent nibh est, interdum non augue id, vestibulum mattis
+                libero. eleifend sodales.Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Praesent nibh est, interdum non augue id,
+                vestibulum mattis libero. eleifend sodales.
+            </p>
+        </div>
+        <!-- Mes réseaux -->
+        <div class="w-2/5 pl-8 pr-4">
+            <h1 class="text-2xl font-extrabold text-left">Mes réseaux</h1>
+            <ul class="text-left">
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://www.linkedin.com/in/julian-chenard/"
+                        class="flex items-center hover:text-blue-500"
+                    >
+                        <Fa icon={faLinkedin} class="text-3xl mr-4" /> Linkedin
+                    </a>
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://github.com/Temechon"
+                        class="flex items-center hover:text-pink-500"
+                    >
+                        <Fa icon={faGithubSquare} class="text-3xl mr-4" /> Github
+                    </a>
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://twitter.com/Temechon"
+                        class="flex items-center hover:text-blue-500"
+                    >
+                        <Fa icon={faTwitterSquare} class="text-3xl mr-4" /> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="mailto:temechon@gmail.com"
+                        class="flex items-center hover:text-pink-500"
+                    >
+                        <Fa icon={faEnvelopeSquare} class="text-3xl mr-4" /> Linkedin
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
