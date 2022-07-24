@@ -13,6 +13,15 @@
     import { faGithubSquare } from "@fortawesome/free-brands-svg-icons/faGithubSquare";
     import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
     import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
+    import { faEarthEurope } from "@fortawesome/free-solid-svg-icons/faEarthEurope";
+    import { faChrome } from "@fortawesome/free-brands-svg-icons/faChrome";
+    import { faCss3Alt } from "@fortawesome/free-brands-svg-icons/faCss3Alt";
+    import { faHtml5 } from "@fortawesome/free-brands-svg-icons/faHtml5";
+    import { faServer } from "@fortawesome/free-solid-svg-icons/faServer";
+    import { faArrowsTurnToDots } from "@fortawesome/free-solid-svg-icons/faArrowsTurnToDots";
+    import { faJsSquare } from "@fortawesome/free-brands-svg-icons/faJsSquare";
+    import { faObjectGroup } from "@fortawesome/free-solid-svg-icons/faObjectGroup";
+    import { faCode } from "@fortawesome/free-solid-svg-icons";
 
     let email = "";
 
@@ -47,9 +56,13 @@
     }
 </script>
 
+<svelte:head>
+    <title>Apprendre les bases du developement web</title>
+</svelte:head>
+
 <section class="w-full px-8 text-center lg:p-14 lg:px-36 pb-12">
     <!-- Titre -->
-    <h1 class="my-14 text-5xl font-extrabold xl:text-8xl">
+    <h1 class="my-14 text-5xl font-extrabold lg:text-8xl">
         Apprendre les bases du <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400"
             >développement web</span
@@ -57,23 +70,35 @@
     </h1>
     <!-- Texte -->
     <!-- sous-titre -->
-    <h2 class="text-3xl lg:mt-28 xl:text-3xl">
+    <h2 class="lg:w-2/3 m-auto text-3xl lg:mt-28 xl:text-3xl p-8 pt-0">
         <span class="font-bold">Une formation</span> complète, qui part de
         <span class="font-bold text-pink-400">zéro</span>
-        et qui explique en détails
+        et qui explique en détails et de manière simple
         <span class="font-bold text-blue-400"
             >les bases du développement web.</span
         >
     </h2>
 
     <div class="lg:w-2/3 m-auto p-8 pt-0">
-        <p class="text-xl mt-6">
-            Tu es en reconversion et le monde du web t'intéresse ? Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Praesent nibh est,
-            interdum non augue id, vestibulum mattis libero. eleifend sodales.
+        <p class="text-xl mt-6 text-justify">
+            En développement, on a la chance d'avoir beaucoup de formations et
+            de ressources sur internet. Il est très facile se s'auto-former sur
+            toutes les technologies du web... <span class="font-semibold"
+                >Encore faut-il savoir quel contenu rechercher et quel
+                technologie travailler !</span
+            ><br />
+        </p>
+        <p class="text-xl mt-6 text-justify">
+            <span class="font-semibold"
+                >Si tu ne sait pas comment faire, ce livre est fait pour toi.</span
+            > Le but de ces quelques pages est de donner une aperçu global du monde
+            du web, en agissant comme une sorte de carte routière. La plupart des
+            concepts importants seront abordés de manière vulgarisé et faciles à
+            aborder. Après, libre à toi de creuser les sujets qui te semblent intéressants
+            !
         </p>
 
-        <p class="text-xl mt-6">
+        <p class="text-xl mt-6 text-justify">
             Tout est en cours d'écriture pour le moment. Si tu veux être prévenu
             quand ça sera disponible, clique ici <Fa
                 icon={faArrowTurnDown}
@@ -84,7 +109,7 @@
         <div class="flex items-center justify-center">
             <button
                 on:click={scrollToBottom}
-                class="bg-indigo-500 px-7 py-4 text-white text-xl rounded-xl mt-20 flex items-center hover:bg-indigo-400 transition-all"
+                class=" bg-gradient-to-r from-blue-500 to-pink-500 px-7 py-4 text-white text-xl rounded-xl mt-20 flex items-center hover:ring-4 ring-white transition-all"
             >
                 <Fa icon={faBoltLightning} class="text-yellow-400 mr-4" />
                 Ca m'intéresse !
@@ -108,40 +133,92 @@
     <!-- Liste des points vus dans la formation -->
     <div class="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-2 md:w-5/6 m-auto">
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
+            <Fa icon={faEarthEurope} class="text-3xl my-4" />
             <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div class="w-60">
+                Où on apprend que c'est une création militaire ...
+            </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faChrome} class="text-3xl my-4" />
+            <div class="text-xl font-bold">
+                Comment fonctionne un navigateur
+            </div>
+            <div class="w-60">
+                Parce que c'est un peu la base du web, un navigateur.
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faServer} class="text-3xl my-4" />
+            <div class="text-xl font-bold">C'est quoi un serveur ?</div>
+            <div class="w-60">Et ça veut dire quoi "déployer" un site ?</div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faCode} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Frontend et backend</div>
+            <div class="w-60">
+                La différence entre le front et le back enfin expliquée
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faHtml5} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Le HTML</div>
+            <div class="w-60">
+                Comment on écrit des pages web ? <br />Comment on utilise le
+                HTML ?
+            </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faCss3Alt} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Le CSS</div>
+            <div class="w-60">Ou comment donner du style à nos pages web</div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faArrowsTurnToDots} class="text-3xl my-4" />
+            <div class="text-xl font-bold">L'algorithmie</div>
+            <div class="w-60">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faJsSquare} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Le Javascript</div>
+            <div class="w-60">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faObjectGroup} class="text-3xl my-4" />
+            <div class="text-xl font-bold">La programmation objet</div>
+            <div class="w-60">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faBoltLightning} class="text-3xl my-4" />
-            <div class="text-xl font-bold">L'histoire de l'internet</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <Fa icon={faObjectGroup} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Le TypeScript</div>
+            <div class="w-60">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
         </div>
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faObjectGroup} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Les framework front</div>
+            <div class="w-60">Angular, React, Vue, Svelte, Solid...</div>
+        </div>
+        <!-- <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faObjectGroup} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Node.js</div>
+            <div class="w-60">Angular, React, Vue, Svelte, Solid...</div>
+        </div>
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faObjectGroup} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Git</div>
+            <div class="w-60">Angular, React, Vue, Svelte, Solid...</div>
+        </div> -->
     </div>
 </section>
 <!-- Separateur -->
