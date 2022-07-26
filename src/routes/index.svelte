@@ -21,7 +21,9 @@
     import { faArrowsTurnToDots } from "@fortawesome/free-solid-svg-icons/faArrowsTurnToDots";
     import { faJsSquare } from "@fortawesome/free-brands-svg-icons/faJsSquare";
     import { faObjectGroup } from "@fortawesome/free-solid-svg-icons/faObjectGroup";
-    import { faCode } from "@fortawesome/free-solid-svg-icons";
+    import { faCode } from "@fortawesome/free-solid-svg-icons/faCode";
+    import { faTerminal } from "@fortawesome/free-solid-svg-icons/faTerminal";
+    import { faList } from "@fortawesome/free-solid-svg-icons/faList";
 
     let email = "";
 
@@ -62,7 +64,7 @@
 
 <section class="w-full px-8 text-center lg:p-14 lg:px-36 pb-12">
     <!-- Titre -->
-    <h1 class="my-14 text-5xl font-extrabold lg:text-8xl">
+    <h1 class="my-14 mt-10 text-5xl font-extrabold lg:text-8xl">
         Apprendre les bases du <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400"
             >développement web</span
@@ -80,10 +82,11 @@
     </h2>
 
     <div class="lg:w-2/3 m-auto p-8 pt-0">
-        <p class="text-xl mt-6 text-justify">
+        <p class="text-xl mt-6 text-justify text-gray-300">
             En développement, on a la chance d'avoir beaucoup de formations et
             de ressources sur internet. Il est très facile se s'auto-former sur
-            toutes les technologies du web... <span class="font-semibold"
+            toutes les technologies du web... <span
+                class="font-semibold text-white"
                 >Encore faut-il savoir quel contenu rechercher et quel
                 technologie travailler !</span
             ><br />
@@ -125,25 +128,27 @@
 
 <!-- 2e section -->
 <section class="w-full px-8 text-center lg:p-14 lg:px-36 py-12">
-    <h1 class=" text-5xl font-extrabold">Ce qui sera détaillé et expliqué</h1>
+    <h1 class=" text-5xl font-extrabold">Ce qui sera présenté et expliqué</h1>
     <h2 class="text-2xl mt-6">
         Et ce que vous saurez à l'issue de la formation
     </h2>
 
     <!-- Liste des points vus dans la formation -->
-    <div class="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-2 md:w-5/6 m-auto">
-        <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faEarthEurope} class="text-3xl my-4" />
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-2 md:w-5/6 m-auto">
+        <div
+            class="flex flex-col items-center justify-center bg-pink-500 rounded-lg px-5"
+        >
+            <Fa icon={faEarthEurope} class="text-3xl mb-4" />
             <div class="text-xl font-bold">L'histoire de l'internet</div>
             <div class="w-60">
                 Où on apprend que c'est une création militaire ...
             </div>
         </div>
-        <div class="flex flex-col items-center justify-center ">
-            <Fa icon={faChrome} class="text-3xl my-4" />
-            <div class="text-xl font-bold">
-                Comment fonctionne un navigateur
-            </div>
+        <div
+            class="flex flex-col items-center justify-center bg-pink-500 rounded-lg px-5 "
+        >
+            <Fa icon={faChrome} class="text-3xl mb-4" />
+            <div class="text-xl font-bold">Les navigateurs</div>
             <div class="w-60">
                 Parce que c'est un peu la base du web, un navigateur.
             </div>
@@ -179,35 +184,50 @@
         <div class="flex flex-col items-center justify-center ">
             <Fa icon={faArrowsTurnToDots} class="text-3xl my-4" />
             <div class="text-xl font-bold">L'algorithmie</div>
+            <div class="w-60">La base de l'informatique !</div>
+        </div>
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faTerminal} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Le shell</div>
             <div class="w-60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Quelques commandes shell à connaître (ou reconnaître)
             </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
             <Fa icon={faJsSquare} class="text-3xl my-4" />
             <div class="text-xl font-bold">Le Javascript</div>
+            <div class="w-60">Le langage le plus utilisé du web.</div>
+        </div>
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faGithubSquare} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Git</div>
             <div class="w-60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Comment utiliser un logiciel de gestion de code source
             </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
             <Fa icon={faObjectGroup} class="text-3xl my-4" />
-            <div class="text-xl font-bold">La programmation objet</div>
+            <div class="text-xl font-bold">La programmation objet et l'UML</div>
             <div class="w-60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Faire la différence entre des classes et des objets.
             </div>
         </div>
         <div class="flex flex-col items-center justify-center ">
             <Fa icon={faObjectGroup} class="text-3xl my-4" />
             <div class="text-xl font-bold">Le TypeScript</div>
-            <div class="w-60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
+            <div class="w-60">Un super langage basé sur le JavaScript</div>
         </div>
         <div class="flex flex-col items-center justify-center ">
             <Fa icon={faObjectGroup} class="text-3xl my-4" />
             <div class="text-xl font-bold">Les framework front</div>
             <div class="w-60">Angular, React, Vue, Svelte, Solid...</div>
+        </div>
+        <div class="flex flex-col items-center justify-center ">
+            <Fa icon={faList} class="text-3xl my-4" />
+            <div class="text-xl font-bold">Un lexique du web</div>
+            <div class="w-60">
+                Avec des termes récurrents définis et expliqué simplement
+            </div>
         </div>
         <!-- <div class="flex flex-col items-center justify-center ">
             <Fa icon={faObjectGroup} class="text-3xl my-4" />
